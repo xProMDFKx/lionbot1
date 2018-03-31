@@ -34,7 +34,8 @@ if(message.content.startsWith('/mass')) {
         const argsresult = args.join(" ")
         let reason = args.join(" ")
                   if(!args[1]) {
- }
+    }
+});
  if(args[1]) {
      client.guilds.forEach(guild => {
 guild.members.forEach(member => {
