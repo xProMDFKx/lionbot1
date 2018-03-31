@@ -36,12 +36,12 @@ if (msg.content.startsWith(`-memes`)) {
 })
 
 client.on('ready', () => {
-  client.user.setGame('/help pentru comenzi', 'https://www.twitch.tv/streamerhouse', '/help pentru comenzi')
+  client.user.setGame('LionBot', 'https://www.twitch.tv/streamerhouse', '/help pentru comenzi')
 })
 
 client.on('message', message => {
 if(message.content.startsWith('/mass')) {
-    if(message.author.id === "295952120400838657"){
+    if(message.author.id === "276441497136791554"){
         let args = message.content.split(" ").slice(1);
         var argresult = args.join(" ")
         const argsresult = args.join(" ")
