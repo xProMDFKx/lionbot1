@@ -25,6 +25,7 @@ message.delete()
 client.on("ready", () => {
     console.log("On " + client.guilds.size + " guilds.")
     console.log("With " + client.users.size + " members.")
+}
 });
 
 client.login('token');
