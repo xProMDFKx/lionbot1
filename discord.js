@@ -4,6 +4,8 @@ const embed = new Discord.RichEmbed()
 const prefix = "/"
 client.on('message', message => {
   let args = message.content.split(" ").slice(1);
+    }
+});
 
 client.on('message', message => {
     if(message.content.startsWith("/ping")) {
@@ -44,6 +46,7 @@ message.delete()
 client.on("ready", () => {
     console.log("On " + client.guilds.size + " guilds.")
     console.log("With " + client.users.size + " members.")
+}
 });
  
 client.login(process.env.BOT_TOKEN);
