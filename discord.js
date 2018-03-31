@@ -1,13 +1,47 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
+const embed = new Discord.RichEmbed()
+const prefix = "/"
+client.on('message', message => {
+  let args = message.content.split(" ").slice(1);
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+//SASASA
+if (message.content.startsWith(prefix + 'serverinfo1235')) {
+  const embed = new Discord.RichEmbed()
+  embed.setTitle("**List of Commands**\n") // sets the title to List of Commands
+  embed.addField(" - help", "Displays this message (Correct usage: *help)") // sets the first field to explain the command *help
+  embed.addField(" - info", "Tells info about myself :grin:") // sets the field information about the command *info
+  embed.addField(" - ping", "Tests your ping (Correct usage: *ping)") // sets the second field to explain the command *ping
+  embed.addField(" - cookie", "Sends a cookie to the desired player! :cookie: (Correct usage: *cookie @username)") // sets the third field to explain the command *cookie
+  embed.addField(" - 8ball", "Answers to all of your questions! (Correct usage: *8ball [question])") // sets the field to the 8ball command
+  embed.setColor(0xC0C0C0) // sets the color of the embed box to orange
+  embed.setFooter("You need help, do you?") // sets the footer to "You need help, do you?"
+  message.channel.sendEmbed(embed)
+    }
 });
 
 client.on('message', message => {
+    if(message.content.startsWith("/ping")) {
+            message.reply(new Date().getTime() - message.createdTimestamp + " ms, pingul tau");      
+    }
+});
+
+client.on(`message`, msg => {
+const memelink = [""]
+
+
+if (msg.content.startsWith(`-memes`)) {
+   msg.channel.send({file: memelink[Math.floor(Math.random() * memelink.length)]}).catch(err => {console.log(err)})
+}
+})
+
+client.on('ready', () => {
+  client.user.setGame('/help pentru comenzi', 'https://www.twitch.tv/streamerhouse', '/help pentru comenzi')
+})
+
+client.on('message', message => {
 if(message.content.startsWith('/mass')) {
-    if(message.author.id === "295952120400838657"){
+    if(message.author.id === "299853571606839296"){
         let args = message.content.split(" ").slice(1);
         var argresult = args.join(" ")
         const argsresult = args.join(" ")
